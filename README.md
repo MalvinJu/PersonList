@@ -8,9 +8,21 @@ This project use other dependencies beside Angular:
 - @angular/material for UI Component
 - momentjs
 
-## Development server
+## Running the project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
+Before running the application, please make sure you have the following package installed.
+
+```bash
+npm install
+```
+
+After the packages have been installed, run the project on dev server using this command.
+
+```bash
+ng serve
+```
+
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
 
 ## Person data
 
