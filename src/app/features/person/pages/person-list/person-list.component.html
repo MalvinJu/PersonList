@@ -1,0 +1,27 @@
+<div>
+    <div class="button-container">
+        <button mat-flat-button class="mat-button-icon" color="primary" (click)="new()"><mat-icon>add</mat-icon>New</button>
+    </div>
+
+    <form [formGroup]="filterForm" class="flex-col">
+        <mat-form-field appearance="outline" [style.width.%]=100>
+            <input 
+                matInput 
+                placeholder="Search person here (Ex. John, john@gmail.com)"
+                formControlName="search"
+                id="search" 
+            />
+        </mat-form-field>
+    </form>
+
+    <app-card-pagination
+        [tableColumns]="columns"
+        [tableData]="paginationData().data"
+        [dataLength]="paginationData().count"
+        [pageSize]="pageSize"
+        (onEditActionClick)="edit($event)"
+        (onDeleteActionClick)="delete($event)"
+        (onPageChange)="onPageChange($event)"
+    >
+    </app-card-pagination>
+</div>

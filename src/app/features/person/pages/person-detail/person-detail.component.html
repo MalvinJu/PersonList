@@ -1,0 +1,76 @@
+<div class="container container-border">
+    <h2 class="form-title">
+        <button mat-icon-button (click)="cancel()" color="primary">
+            <mat-icon>arrow_back_ios</mat-icon> 
+        </button>
+        <span>{{formKind === FormType.New ? "Add" : "Edit"}} Person</span>
+    </h2>
+
+    <app-form-button
+        [saveButtonText]="formKind === FormType.New ? 'Add Person' : 'Update Person'"
+        [showDeleteButton]="formKind === FormType.Edit"
+        (onSaveActionClick)="save()"
+        (onCancelActionClick)="cancel()"
+        (onDeleteActionClick)="delete()"
+    >
+    </app-form-button>
+
+    <form [formGroup]="form" class="flex-col">
+        <div class="flex-row">
+            <mat-form-field appearance="outline" [style.width.%]=30>
+                <mat-label>Name</mat-label>
+                <input 
+                    matInput 
+                    formControlName="name"
+                    id="name" 
+                />
+                <mat-error *ngIf="form.get('name')?.hasError('required')">
+                    Name is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" [style.width.%]=30>
+                <mat-label>Date of Birth</mat-label>
+                <input 
+                    matInput 
+                    [matDatepicker]="picker"
+                    formControlName="birthday"
+                    id="birthday" 
+                />
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="form.get('birthday')?.hasError('required')">
+                    Date of birth is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="flex-row">
+            <mat-form-field appearance="outline" [style.width.%]=30>
+                <mat-label>Email</mat-label>
+                <input 
+                    matInput 
+                    formControlName="email"
+                    id="email" 
+                />
+                <mat-error *ngIf="form.get('email')?.hasError('required')">
+                    Email is required
+                </mat-error>
+                <mat-error *ngIf="form.get('email')?.hasError('email')">
+                    Email format is incorrect
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="flex-row">
+            <mat-form-field appearance="outline" [style.width.%]=30>
+                <mat-label>Occupation</mat-label>
+                <input 
+                    matInput 
+                    formControlName="occupation"
+                    id="occupation" 
+                />
+            </mat-form-field>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="form-button-outer-container">
+    <mat-divider></mat-divider>
+    <div mat-dialog-actions align="start" class="form-button-container">
+        <button mat-flat-button color="primary" (click)="save()" *ngIf="showSaveButton">
+            <mat-icon>{{saveIconName}}</mat-icon>{{saveButtonText}}
+            <mat-icon *ngIf="isLoadingSave"><mat-spinner color="primary" diameter="20" class="button-loading"></mat-spinner></mat-icon>
+        </button>
+        <button mat-flat-button color="primary" (click)="delete()" *ngIf="showDeleteButton">
+            <mat-icon>{{deleteIconName}}</mat-icon>{{deleteButtonText}}
+            <mat-icon *ngIf="isLoadingDelete"><mat-spinner color="primary" diameter="20" class="button-loading"></mat-spinner></mat-icon>
+        </button>
+        <button mat-flat-button color="primary" (click)="cancel()"><mat-icon fontIcon="cancel"></mat-icon>Cancel</button>
+    </div>
+    <mat-divider></mat-divider>
+</div>

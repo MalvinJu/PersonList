@@ -1,0 +1,16 @@
+.card {
+    padding: 10px;
+    margin-bottom: 10px;
+    .data-title {
+        font-size: smaller;
+        opacity: 90%;
+    }
+    .card-title {
+        margin: 0;
+        cursor: pointer;
+    }
+}
+
+.mat-mdc-paginator {
+    background-color: transparent;
+}

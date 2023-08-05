@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+@use './_base.scss';
+@use './custom-palette.scss' as customPalette;
+@use './_base-theme.scss' as custombase;
+
+@include mat.core();
+
+$custom-primary: mat.define-palette(customPalette.$cloud-blue-palette);
+$custom-accent: mat.define-palette(mat.$indigo-palette);
+$custom-warn: mat.define-palette(mat.$red-palette);
+
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: $custom-primary,
+    accent: $custom-accent,
+    warn: $custom-warn,
+  )
+));
+
+@include custombase.theme($custom-theme);
+@include mat.all-component-themes($custom-theme);
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: azure;
+}
