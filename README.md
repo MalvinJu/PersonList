@@ -16,5 +16,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 The person data can be found on assets folder `assets/person.js`.
 
+## Screenshoot
 
+- Person list page
+![Screenshot 2023-08-05 221657](https://github.com/MalvinJu/PersonList/assets/19385651/0e8167d7-543f-4aa6-8a37-f57a13c34939)
 
+- Person detail page
+![Screenshot 2023-08-05 221723](https://github.com/MalvinJu/PersonList/assets/19385651/58cb6291-5fc9-4cd7-99d7-bffc70c0d234)
